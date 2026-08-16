@@ -1,0 +1,12 @@
+{
+  "name": "mujoco-arm-mcp-agent",
+  "private": true,
+  "type": "module",
+  "description": "Codex SDK driver for the mujoco-arm-mcp demo",
+  "scripts": {
+    "agent": "node agent/arm_agent.mjs"
+  },
+  "dependencies": {
+    "@openai/codex-sdk": "^0.147.0"
+  }
+}

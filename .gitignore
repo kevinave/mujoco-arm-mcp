@@ -1,0 +1,15 @@
+# Runtime
+trajectory.log
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store
+
+# Raw recordings and unprocessed captures — the exported GIF is what ships
+*.mov
+*.mp4
+ScreenShot_*.png
