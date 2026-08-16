@@ -55,17 +55,11 @@ Expected output:
 $MJPY viewer_server.py
 ```
 
-A MuJoCo window opens with the arm pointing straight up. That pose is not worth photographing, so
-**Terminal B** — move it:
+A MuJoCo window opens with the arm pointing straight up. Leave it running — step 3 records it
+moving. To confirm the socket link is live, run `$PY test_client.py` from **Terminal B** and watch
+the arm ease over to `j1 = 45°`, `j2 = −30°`.
 
-```bash
-$PY test_client.py
-```
-
-The arm eases over to `j1 = 45°`, `j2 = −30°`. Drag inside the window first to frame the arm
-reasonably.
-
-> 📸 **`viewer.png`** — screenshot the window alone (`Cmd+Shift+4`, then `Space`, then click it).
+Drag inside the window to frame the arm before recording.
 
 ---
 
