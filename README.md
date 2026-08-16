@@ -12,6 +12,7 @@ and, given a target coordinate, must find the joint angles itself.
 [![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![MuJoCo](https://img.shields.io/badge/MuJoCo-3.2+-FF6B35)](https://mujoco.org/)
 [![MCP](https://img.shields.io/badge/protocol-MCP-6E56CF)](https://modelcontextprotocol.io/)
+[![CI](https://github.com/kevinave/mujoco-arm-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/kevinave/mujoco-arm-mcp/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 <br/>
