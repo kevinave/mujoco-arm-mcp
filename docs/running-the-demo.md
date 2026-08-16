@@ -23,7 +23,8 @@ export MJPY="$(dirname $PY)/mjpython"
 ## 1 · Protocol check — no window needed
 
 Confirms the server is a real MCP server: it handshakes, advertises its tools, and answers a remote
-call.
+call. Every answer is asserted — tool count, tool names, and the tip position against the analytic
+kinematics — so a regression exits non-zero rather than printing something quietly wrong.
 
 ```bash
 $PY test_client.py
@@ -40,7 +41,12 @@ Expected output:
      - reset: Return the arm to its initial pose (both joints at zero, pointing straight up).
 
 3. Remote call  move_arm(angle1_deg=45, angle2_deg=-30):
-     -> Moved. Tip at x=..., z=...
+     -> Moved. Tip at x=0.457, z=0.84 (angles j1=45.0deg, j2=-30.0deg)
+
+4. Remote call  get_state():
+     -> Angles j1=45.0deg, j2=-30.0deg; tip at x=0.457, z=0.84
+
+All assertions passed: 3 tools, expected names, tip matches fk(45, -30).
 ```
 
 > 📸 **`protocol-test.png`** — screenshot the terminal.
