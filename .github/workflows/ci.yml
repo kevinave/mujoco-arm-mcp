@@ -1,0 +1,33 @@
+name: CI
+
+# Everything here runs headless: mj_forward needs no GUI, and the protocol
+# test drives the server over stdio exactly the way an agent would.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Tests (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest
+      - name: Unit tests (fk vs MuJoCo, socket framing)
+        run: pytest
+      - name: Protocol-level test (a real MCP client over stdio)
+        run: python test_client.py
