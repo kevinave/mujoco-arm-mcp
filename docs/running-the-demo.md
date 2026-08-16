@@ -146,6 +146,5 @@ Drop the files in `docs/images/` using exactly these names — the README refere
 
 | File | From |
 |:--|:--|
-| `viewer.png` | step 2 |
 | `agent-run.gif` | step 3 |
 | `protocol-test.png` | step 1 |
