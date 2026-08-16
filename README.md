@@ -188,6 +188,7 @@ of the remaining distance per frame. Motion looks continuous without any command
 | `viewer_server.py` | the MuJoCo window; listens on `:8899` and eases toward the target pose |
 | `replay_viewer.py` | replays `trajectory.log` as one continuous motion |
 | `test_client.py` | protocol-level client: handshake, list tools, remote call |
+| `tests/` | holds `fk()` to MuJoCo's numbers and `recv_json` to its framing promise — what CI runs |
 | `chat.sh` | one command to start a Codex CLI session with the arm attached |
 | `agent/arm_agent.mjs` | the same thing from the Codex SDK, streaming each tool call |
 
